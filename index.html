@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Text Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+
+
+<div class="math-container">
+    <h1>El TEG está roto</h1>
+
+    <p> 
+        Me duele admitirlo, porque es mi juego de mesa favorito. Pero el TEG está roto. El TEG está roto y lo que es peor, el RISK, su versión yankee, no lo está. Al menos por cómo me gusta jugarlo a mi, que es con dominación mundial y sin objetivos.
+        Si quieren seguir disfrutando del juego, recomendaría no seguir leyendo, porque lo que sigue es el cálculo analítico de la probabilidad de ganar un país dada una cantidad de ejércitos atacantes y ejércitos defensores. Para el final verán lo que tanto me desilusionó a mi.
+    </p>
+
+    <h1>Las reglas</h1>
+    
+    <h1>Los casos básicos</h1>
+    <p>
+        Para terminar sabiendo cuál es la probabilidad de ganar un país al atacar y defender con A y D ejércitos, es importante calcular primero la probabilidad de ganar una sola batalla. El caso más fácil es cuando se juega un dado contra uno (1vs1). La probabilidad de que un dado aleatorio sea mayor estricto (o lo que es lo mismo, menor igual) a otro dado aleatorio, se puede leer de la siguiente tabla.
+    </p>
+    <p>
+        <span class="tex">
+            \[
+            \begin{array}{c|cccccc}
+                \text{D/A} & 1 & 2 & 3 & 4 & 5 & 6 \\
+                \hline
+                1   & \text{\(\color{red}{=}\)} & > & > & > & > & > \\
+                2   & \text{\(\color{red}{<}\)} & \text{\(\color{red}{=}\)} & > & > & > & > \\
+                3   & \text{\(\color{red}{<}\)} & \text{\(\color{red}{<}\)} & \text{\(\color{red}{=}\)} & > & > & > \\
+                4   & \text{\(\color{red}{<}\)} & \text{\(\color{red}{<}\)} & \text{\(\color{red}{<}\)} & \text{\(\color{red}{=}\)} & > & > \\
+                5   & \text{\(\color{red}{<}\)} & \text{\(\color{red}{<}\)} & \text{\(\color{red}{<}\)} & \text{\(\color{red}{<}\)} & \text{\(\color{red}{=}\)} & > \\
+                6   & \text{\(\color{red}{<}\)} & \text{\(\color{red}{<}\)} & \text{\(\color{red}{<}\)} & \text{\(\color{red}{<}\)} & \text{\(\color{red}{<}\)} & \text{\(\color{red}{=}\)} \\
+            \end{array}
+            \]
+        </span>
+    </p>
+    
+    <p>
+        En la tabla están todos los casos posibles, con los dados atacantes en las columnas y los dados defensores en las filas. Con un '<' se simboliza el caso donde el dado atacante es menor al dado defensor y con un signo '=' se representa el caso donde hay un empate entre ambos dados. Si contamos de esta tabla los casos donde el dado atacante es menor o igual al dado defensor (es decir, gana el defensor), entonces obtenemos una especie de triángulo (marcado en rojo). Sumando de arriba hacia abajo, obtenemos simplemente <span class="tex">1+2+3+4+5+6</span>. La cantidad total de casos es el tamaño total de la tabla, que es <span class="tex">6x6 = 36</span>. Entonces, la probabilidad de perder en el caso 1vs1 es
+
+    </p>
+    <span class="tex">
+        \[
+            \pi_{110} = \frac{1+2+3+4+5+6}{6^2} = \frac{7}{12} = 58,33%,
+        \]
+    </span>
+    <p>
+        donde con \pi_{110} simbolizo la probabilidad de ganar cero ejércitos al atacar uno contra uno (así uso la misma notación de <span id="cite1">[1]</span>)
+    </p>
+
+    <h2>References</h2>
+    <ol>
+    <li id="ref1">Osborne, J. A. (Year). Markov Chains for the RISK Board Game Revisited. <em>Journal Name</em>, <em>Volume</em>(Issue), Page Numbers.</li>
+    </ol>
+</div>
+
+</body>
+</html>
